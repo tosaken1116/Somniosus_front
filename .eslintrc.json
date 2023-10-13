@@ -17,9 +17,13 @@
     "import",
     "unused-imports",
     "jsx-a11y",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "@tanstack/query"
   ],
   "rules": {
+    "@tanstack/query/exhaustive-deps": "error",
+    "@tanstack/query/prefer-query-object-syntax": "error",
+    "@tanstack/query/stable-query-client": "error",
     // 関数の戻り値の型を明示的に指定する
     "@typescript-eslint/explicit-function-return-type": "error",
 
