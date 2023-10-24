@@ -6,13 +6,14 @@
     "plugin:jsx-a11y/recommended",
     "next/core-web-vitals",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "import", "unused-imports", "jsx-a11y"],
+  "plugins": ["react", "import", "unused-imports", "jsx-a11y", "tailwindcss"],
   "rules": {
     // 関数の戻り値の型を明示的に指定する
     "@typescript-eslint/explicit-function-return-type": "error",

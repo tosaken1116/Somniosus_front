@@ -24,16 +24,16 @@ type Props = {
 const typographyVariants = cva('', {
   variants: {
     variant: {
-      h1: 'font-bold text-4xl',
-      h2: 'font-bold text-3xl',
-      h3: 'font-bold text-2xl',
-      h4: 'font-bold text-xl',
-      h5: 'font-bold text-lg',
-      h6: 'font-bold text-base',
+      h1: 'text-4xl font-bold',
+      h2: 'text-3xl font-bold',
+      h3: 'text-2xl font-bold',
+      h4: 'text-xl font-bold',
+      h5: 'text-lg font-bold',
+      h6: 'text-base font-bold',
       strong: 'font-bold',
-      body1: 'font-normal text-base',
-      body2: 'font-normal text-sm',
-      caption: 'font-normal text-xs',
+      body1: 'text-base font-normal',
+      body2: 'text-sm font-normal',
+      caption: 'text-xs font-normal',
     },
   },
 });
