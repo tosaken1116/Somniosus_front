@@ -73,6 +73,7 @@ module.exports = {
       colors: {
         'black-translucent': 'rgba(231,233,234,0.1)',
         'white-translucent': 'rgba(15,20,25,0.1)',
+        'primary': '#00acee',
       },
     },
   },
