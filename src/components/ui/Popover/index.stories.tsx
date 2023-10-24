@@ -29,7 +29,7 @@ export const Default: Story = {
           <button>Open popover</button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-80 -m-2"
+          className="-m-2 w-80"
           onMouseEnter={(): void => setOpen(true)}
           onMouseLeave={(): void => setOpen(false)}
         >
