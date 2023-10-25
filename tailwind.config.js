@@ -71,7 +71,7 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       colors: {
-        'black-translucent': 'rgba(231,233,234,0.1)',
+        'black-translucent': '#5B7083CC',
         'white-translucent': 'rgba(15,20,25,0.1)',
         'primary': '#00acee',
       },
