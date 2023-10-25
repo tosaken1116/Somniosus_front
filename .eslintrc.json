@@ -14,10 +14,15 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "import", "unused-imports", "jsx-a11y", "tailwindcss"],
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"]
+    }
+  },
   "rules": {
     // 関数の戻り値の型を明示的に指定する
     "@typescript-eslint/explicit-function-return-type": "error",
-
+    "tailwindcss/no-custom-classname": "off",
     // 必要な場合にのみアロー関数の本体を使用する
     "arrow-body-style": ["error", "as-needed"],
 
