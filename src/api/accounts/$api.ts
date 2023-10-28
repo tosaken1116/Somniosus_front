@@ -1,13 +1,15 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import type { Methods as Methods_2yw7dz } from './_id@string';
 import type { Methods as Methods_1pbnd9f } from './register';
+import type { Methods as Methods_1vum36t } from './register/password';
 import type { Methods as Methods_ut8bpv } from './update';
 
 const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:8000' : baseURL).replace(/\/$/, '');
   const PATH0 = '/accounts';
   const PATH1 = '/accounts/register';
-  const PATH2 = '/accounts/update';
+  const PATH2 = '/accounts/register/password';
+  const PATH3 = '/accounts/update';
   const GET = 'GET';
   const POST = 'POST';
   const PUT = 'PUT';
@@ -31,6 +33,21 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       };
     },
     register: {
+      password: {
+        /**
+         * @param option.body - password to create
+         * @returns success
+         */
+        post: (option: { body: Methods_1vum36t['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_1vum36t['post']['resBody'], BasicHeaders, Methods_1vum36t['post']['status']>(prefix, PATH2, POST, option).json(),
+        /**
+         * @param option.body - password to create
+         * @returns success
+         */
+        $post: (option: { body: Methods_1vum36t['post']['reqBody'], config?: T | undefined }) =>
+          fetch<Methods_1vum36t['post']['resBody'], BasicHeaders, Methods_1vum36t['post']['status']>(prefix, PATH2, POST, option).json().then(r => r.body),
+        $path: () => `${prefix}${PATH2}`,
+      },
       /**
        * @param option.body - account to create
        * @returns success
@@ -51,14 +68,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
        * @returns success
        */
       put: (option: { body: Methods_ut8bpv['put']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods_ut8bpv['put']['resBody'], BasicHeaders, Methods_ut8bpv['put']['status']>(prefix, PATH2, PUT, option).json(),
+        fetch<Methods_ut8bpv['put']['resBody'], BasicHeaders, Methods_ut8bpv['put']['status']>(prefix, PATH3, PUT, option).json(),
       /**
        * @param option.body - account to update
        * @returns success
        */
       $put: (option: { body: Methods_ut8bpv['put']['reqBody'], config?: T | undefined }) =>
-        fetch<Methods_ut8bpv['put']['resBody'], BasicHeaders, Methods_ut8bpv['put']['status']>(prefix, PATH2, PUT, option).json().then(r => r.body),
-      $path: () => `${prefix}${PATH2}`,
+        fetch<Methods_ut8bpv['put']['resBody'], BasicHeaders, Methods_ut8bpv['put']['status']>(prefix, PATH3, PUT, option).json().then(r => r.body),
+      $path: () => `${prefix}${PATH3}`,
     },
   };
 };

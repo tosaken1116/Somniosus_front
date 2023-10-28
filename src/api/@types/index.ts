@@ -1,67 +1,115 @@
 /* eslint-disable */
 export type OkResponse = {
-  message?: string | undefined
+  message: string
 }
 
 export type ErrorResponse = {
-  message?: string | undefined
+  message: string
 }
 
 export type RegisterAccountPayload = {
-  id: string
   name: string
+  tel_num: string
+  birth_day: string
+}
+
+export type RegisterPasswordPayload = {
+  id: string
+  password: string
 }
 
 export type UpdateAccountPayload = {
-  name?: string | undefined
-  description?: string | undefined
-  image_url?: string | undefined
-  birth_day?: string | undefined
-  website_url?: string | undefined
+  name: string
+  description: string
+  image_url: string
+  birth_day: string
+  website_url: string
 }
 
 export type Account = {
-  id?: string | undefined
-  name?: string | undefined
-  description?: string | undefined
-  image_url?: string | undefined
-  birth_day?: string | undefined
-  website_url?: string | undefined
+  id: string
+  name: string
+  description: string
+  image_url: string
+  birth_day: string
+  website_url: string
+  follow_count: number
+  follower_count: number
+  is_following: boolean
+  role: number
 }
 
 export type CreateTweetPayload = {
-  content?: string | undefined
-  image_url_list?: string[] | undefined
-  account_id?: string | undefined
-  reply_to?: string | undefined
-  root?: string | undefined
+  content: string
+  image_url_list: string[]
+  account_id: string
+  reply_to: string
+  root: string
 }
 
 export type CreateTweetResponse = {
-  id?: string | undefined
-  content?: string | undefined
-  image_url_list?: string[] | undefined
-  created_at?: string | undefined
-  account_id?: string | undefined
-  reply_to?: string | undefined
-  root?: string | undefined
+  id: string
+  content: string
+  image_url_list: string[]
+  created_at: string
+  account_id: string
+  reply_to: string
+  root: string
 }
 
 export type TweetItem = {
-  id?: string | undefined
-  content?: string | undefined
-  image_url_list?: string[] | undefined
-  created_at?: string | undefined
-  account_id?: string | undefined
-  reply_to?: string | undefined
-  root?: string | undefined
+  id: string
+  content: string
+  image_url_list: string[]
+  created_at: string
+  is_favorite: boolean
+  is_retweet: boolean
+  impression_count: number
+  favorite_count: number
+  retweet_count: number
+  reply_count: number
+  is_bookmark: boolean
+
+  account: {
+    id: string
+    name: string
+    image_url: string
+    role: number
+  }
+
+  reply_to: string
+  root: string
+
+  retweet_content: {
+    id: string
+    content: string
+    image_url_list: string[]
+    created_at: string
+    is_favorite: boolean
+    is_retweet: boolean
+    impression_count: number
+    favorite_count: number
+    retweet_count: number
+    reply_count: number
+    is_bookmark: boolean
+
+    account: {
+      id: string
+      name: string
+      image_url: string
+      role: number
+    }
+
+    reply_to: string
+    root: string
+  } | null
 }
 
 export type GetTweetResponse = {
-  timeline?: TweetItem[] | undefined
+  timeline: TweetItem[]
 }
 
 export type Like = {
-  account_id?: string | undefined
-  tweet_id?: string | undefined
+  account_id: string
+  tweet_id: string
 }
