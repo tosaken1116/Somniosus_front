@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class'],
+  darkMode: true,
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -74,6 +74,11 @@ module.exports = {
         'black-translucent': '#5B7083CC',
         'white-translucent': 'rgba(15,20,25,0.1)',
         'primary': '#00acee',
+        'black-hover': 'rgba(0,0,0,0.15)',
+        'white-hover': 'rgba(255,255,255,0.15)',
+      },
+      boxShadow: {
+        around: '0 0 6px 1px rgba(255,255,255,0.3)',
       },
     },
   },
