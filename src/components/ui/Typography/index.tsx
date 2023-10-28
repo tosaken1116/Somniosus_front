@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { cva } from 'class-variance-authority';
-import clsx from 'clsx';
+
+import { cn } from '@/libs/utils';
 
 export type Variant =
   | 'h1'
@@ -40,7 +41,7 @@ const typographyVariants = cva('', {
 
 export const Typography: React.FC<Props> = ({
   variant = 'body1',
-  className = '',
+  className,
   children,
 }) => {
   const Tag =
@@ -51,7 +52,7 @@ export const Typography: React.FC<Props> = ({
       : variant;
 
   return (
-    <Tag className={clsx(className, typographyVariants({ variant }))}>
+    <Tag className={cn(typographyVariants({ variant }), className)}>
       {children}
     </Tag>
   );
