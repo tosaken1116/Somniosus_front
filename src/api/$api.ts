@@ -1,6 +1,7 @@
 import type { AspidaClient, BasicHeaders } from 'aspida';
 import type { Methods as Methods_1vmdska } from './accounts/_id@string';
 import type { Methods as Methods_17l7lnu } from './accounts/register';
+import type { Methods as Methods_1nkw4za } from './accounts/register/password';
 import type { Methods as Methods_66bvhy } from './accounts/update';
 import type { Methods as Methods_12twjkf } from './follows/create/_id@string';
 import type { Methods as Methods_1ot5dgu } from './follows/delete/_id@string';
@@ -14,14 +15,15 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
   const prefix = (baseURL === undefined ? 'http://localhost:8000' : baseURL).replace(/\/$/, '');
   const PATH0 = '/accounts';
   const PATH1 = '/accounts/register';
-  const PATH2 = '/accounts/update';
-  const PATH3 = '/follows/create';
-  const PATH4 = '/follows/delete';
-  const PATH5 = '/likes/create';
-  const PATH6 = '/likes/delete';
-  const PATH7 = '/tweets/delete';
-  const PATH8 = '/tweets/get/timeline';
-  const PATH9 = '/tweets/post';
+  const PATH2 = '/accounts/register/password';
+  const PATH3 = '/accounts/update';
+  const PATH4 = '/follows/create';
+  const PATH5 = '/follows/delete';
+  const PATH6 = '/likes/create';
+  const PATH7 = '/likes/delete';
+  const PATH8 = '/tweets/delete';
+  const PATH9 = '/tweets/get/timeline';
+  const PATH10 = '/tweets/post';
   const GET = 'GET';
   const POST = 'POST';
   const PUT = 'PUT';
@@ -47,6 +49,21 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
         };
       },
       register: {
+        password: {
+          /**
+           * @param option.body - password to create
+           * @returns success
+           */
+          post: (option: { body: Methods_1nkw4za['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1nkw4za['post']['resBody'], BasicHeaders, Methods_1nkw4za['post']['status']>(prefix, PATH2, POST, option).json(),
+          /**
+           * @param option.body - password to create
+           * @returns success
+           */
+          $post: (option: { body: Methods_1nkw4za['post']['reqBody'], config?: T | undefined }) =>
+            fetch<Methods_1nkw4za['post']['resBody'], BasicHeaders, Methods_1nkw4za['post']['status']>(prefix, PATH2, POST, option).json().then(r => r.body),
+          $path: () => `${prefix}${PATH2}`,
+        },
         /**
          * @param option.body - account to create
          * @returns success
@@ -67,20 +84,20 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns success
          */
         put: (option: { body: Methods_66bvhy['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods_66bvhy['put']['resBody'], BasicHeaders, Methods_66bvhy['put']['status']>(prefix, PATH2, PUT, option).json(),
+          fetch<Methods_66bvhy['put']['resBody'], BasicHeaders, Methods_66bvhy['put']['status']>(prefix, PATH3, PUT, option).json(),
         /**
          * @param option.body - account to update
          * @returns success
          */
         $put: (option: { body: Methods_66bvhy['put']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods_66bvhy['put']['resBody'], BasicHeaders, Methods_66bvhy['put']['status']>(prefix, PATH2, PUT, option).json().then(r => r.body),
-        $path: () => `${prefix}${PATH2}`,
+          fetch<Methods_66bvhy['put']['resBody'], BasicHeaders, Methods_66bvhy['put']['status']>(prefix, PATH3, PUT, option).json().then(r => r.body),
+        $path: () => `${prefix}${PATH3}`,
       },
     },
     follows: {
       create: {
         _id: (val2: string) => {
-          const prefix2 = `${PATH3}/${val2}`;
+          const prefix2 = `${PATH4}/${val2}`;
 
           return {
             /**
@@ -99,7 +116,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       },
       delete: {
         _id: (val2: string) => {
-          const prefix2 = `${PATH4}/${val2}`;
+          const prefix2 = `${PATH5}/${val2}`;
 
           return {
             /**
@@ -120,7 +137,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     likes: {
       create: {
         _id: (val2: string) => {
-          const prefix2 = `${PATH5}/${val2}`;
+          const prefix2 = `${PATH6}/${val2}`;
 
           return {
             /**
@@ -139,7 +156,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
       },
       delete: {
         _id: (val2: string) => {
-          const prefix2 = `${PATH6}/${val2}`;
+          const prefix2 = `${PATH7}/${val2}`;
 
           return {
             /**
@@ -160,7 +177,7 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
     tweets: {
       delete: {
         _id: (val2: string) => {
-          const prefix2 = `${PATH7}/${val2}`;
+          const prefix2 = `${PATH8}/${val2}`;
 
           return {
             /**
@@ -183,13 +200,13 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
            * @returns success
            */
           get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods_um4wq7['get']['resBody'], BasicHeaders, Methods_um4wq7['get']['status']>(prefix, PATH8, GET, option).json(),
+            fetch<Methods_um4wq7['get']['resBody'], BasicHeaders, Methods_um4wq7['get']['status']>(prefix, PATH9, GET, option).json(),
           /**
            * @returns success
            */
           $get: (option?: { config?: T | undefined } | undefined) =>
-            fetch<Methods_um4wq7['get']['resBody'], BasicHeaders, Methods_um4wq7['get']['status']>(prefix, PATH8, GET, option).json().then(r => r.body),
-          $path: () => `${prefix}${PATH8}`,
+            fetch<Methods_um4wq7['get']['resBody'], BasicHeaders, Methods_um4wq7['get']['status']>(prefix, PATH9, GET, option).json().then(r => r.body),
+          $path: () => `${prefix}${PATH9}`,
         },
       },
       post: {
@@ -198,14 +215,14 @@ const api = <T>({ baseURL, fetch }: AspidaClient<T>) => {
          * @returns success
          */
         post: (option: { body: Methods_hsfp97['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods_hsfp97['post']['resBody'], BasicHeaders, Methods_hsfp97['post']['status']>(prefix, PATH9, POST, option).json(),
+          fetch<Methods_hsfp97['post']['resBody'], BasicHeaders, Methods_hsfp97['post']['status']>(prefix, PATH10, POST, option).json(),
         /**
          * @param option.body - tweet to delete
          * @returns success
          */
         $post: (option: { body: Methods_hsfp97['post']['reqBody'], config?: T | undefined }) =>
-          fetch<Methods_hsfp97['post']['resBody'], BasicHeaders, Methods_hsfp97['post']['status']>(prefix, PATH9, POST, option).json().then(r => r.body),
-        $path: () => `${prefix}${PATH9}`,
+          fetch<Methods_hsfp97['post']['resBody'], BasicHeaders, Methods_hsfp97['post']['status']>(prefix, PATH10, POST, option).json().then(r => r.body),
+        $path: () => `${prefix}${PATH10}`,
       },
     },
   };
