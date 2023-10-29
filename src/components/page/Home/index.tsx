@@ -11,7 +11,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 
 export const Screen: React.FC = () => (
   <div className="flex h-screen">
-    <div className="flex w-24 items-center lg:w-1/4 lg:justify-end">
+    <div className="flex h-screen w-24 items-center lg:w-1/4 lg:justify-end">
       <SideBar />
     </div>
     <Separator orientation="vertical" className="w-[2px] bg-white-hover" />
@@ -39,7 +39,7 @@ export const Screen: React.FC = () => (
         />
       </div>
 
-      <ScrollArea className="mt-[64px] h-[100%-64px]">
+      <ScrollArea className="mt-[64px] h-[92%] overflow-scroll">
         <PostTweet />
         <Separator
           className="h-[2px] bg-white-hover"
@@ -48,7 +48,7 @@ export const Screen: React.FC = () => (
         <Tweets />
       </ScrollArea>
     </div>
-    <div className="hidden w-0 flex-row md:flex md:w-1/4">
+    <div className="hidden h-screen w-0 flex-row md:flex md:w-1/4">
       <Separator orientation="vertical" className="w-[2px] bg-white-hover" />
       <div className="w-full overflow-scroll px-6 pt-1">
         <TrendsContainer />
