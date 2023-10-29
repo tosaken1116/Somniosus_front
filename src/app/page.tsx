@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react';
+import { Screen } from '@/components/page/Top'
 
-const Home = (): ReactNode => <p>this is home</p>;
+const Top:React.FC = () => <Screen />;
 
-export default Home;
+export default Top;
