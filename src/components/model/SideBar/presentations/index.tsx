@@ -44,13 +44,13 @@ export const SideBarPresentation: React.FC = () => {
   } = useSideBar();
   return (
     <TooltipProvider>
-      <header className="flex h-screen w-80 flex-col items-start">
-        <ScrollArea className=" w-72 flex-1 px-2">
-          <div className="flex h-full w-full flex-col items-start">
+      <header className="flex h-screen w-full flex-col items-center lg:w-72">
+        <ScrollArea className=" w-68 flex-1 px-2">
+          <div className="flex h-full w-full flex-col items-center">
             <Button
               variant="destructive"
               size="icon"
-              className="self-start rounded-full p-9 hover:bg-white-hover"
+              className="self-start rounded-full p-7 hover:bg-white-hover"
             >
               <span>
                 <Link href="/home">
@@ -65,7 +65,7 @@ export const SideBarPresentation: React.FC = () => {
                     <Button
                       onClick={handleClick && ((): void => handleClick())}
                       variant="destructive"
-                      className=" self-start rounded-full py-8 hover:bg-white-hover"
+                      className=" self-start rounded-full py-6 hover:bg-white-hover"
                     >
                       {href != undefined ? (
                         <Link
@@ -74,7 +74,7 @@ export const SideBarPresentation: React.FC = () => {
                         >
                           {path == href ? selectedIcon : defaultIcon}
                           <Typography
-                            className="hidden px-6 text-[24px] md:block"
+                            className="hidden px-6 text-[20px] lg:block"
                             variant={href == path ? 'strong' : 'body1'}
                           >
                             {label}
@@ -83,7 +83,7 @@ export const SideBarPresentation: React.FC = () => {
                       ) : (
                         <>
                           {path == href ? selectedIcon : defaultIcon}
-                          <Typography className="hidden px-6 text-[24px]  md:block">
+                          <Typography className="hidden px-6 text-[20px]  lg:block">
                             {label}
                           </Typography>
                         </>
@@ -92,7 +92,7 @@ export const SideBarPresentation: React.FC = () => {
                   </TooltipTrigger>
                   <TooltipContent
                     sideOffset={-96}
-                    className="block border-none  p-1 md:hidden"
+                    className="block border-none  p-1 lg:hidden"
                   >
                     <p>{label}</p>
                   </TooltipContent>
@@ -107,7 +107,7 @@ export const SideBarPresentation: React.FC = () => {
                   className=" self-start rounded-full py-7 text-xl hover:bg-white-hover"
                 >
                   <PiDotsThreeCircle size={36} className=" h-7 w-7" />
-                  <Typography className="hidden px-6 text-[24px]  md:block">
+                  <Typography className="hidden px-6 text-[20px]  lg:block">
                     もっと見る
                   </Typography>
                 </Button>
@@ -123,7 +123,7 @@ export const SideBarPresentation: React.FC = () => {
                 <div className="overflow-hidden rounded-sm bg-black shadow-around">
                   <Button
                     variant="destructive"
-                    className="w-full justify-start rounded-none py-8 text-lg hover:bg-white-hover"
+                    className="w-full justify-start rounded-none py-6 text-lg hover:bg-white-hover"
                   >
                     <FaRegMoneyBillAlt size={36} className=" h-7 w-7" />
                     <Typography className="px-6 text-xl">収益化</Typography>
@@ -198,35 +198,35 @@ export const SideBarPresentation: React.FC = () => {
                 </div>
               </PopoverContent>
             </Popover>
-            <Button className="mt-2 rounded-full py-8 md:w-full">
-              <Typography
-                variant="strong"
-                className="mx-1 hidden text-xl md:block"
-              >
+            <Button
+              className="mt-2 h-12 w-12 rounded-full py-6 lg:w-full"
+              size="icon"
+            >
+              <Typography variant="strong" className="hidden text-lg lg:block">
                 ツイートする
               </Typography>
-              <GiFeather className="block md:hidden" size={32} />
+              <GiFeather className="block lg:hidden" size={32} />
             </Button>
           </div>
         </ScrollArea>
         <Popover>
           <PopoverTrigger asChild>
             <Button
-              className="flex w-full gap-3 self-start rounded-full bg-black-hover py-9 text-lg hover:bg-white-hover"
+              className="mb-4 flex w-16 gap-3 self-start rounded-full bg-black-hover py-8 text-lg hover:bg-white-hover lg:w-full"
               startIcon={
-                <Avatar className="h-12 w-12">
+                <Avatar className="h-10 w-10">
                   <AvatarImage src={image_url} />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               }
             >
-              <div className="flex-1 text-start">
+              <div className="hidden flex-1 text-start lg:block">
                 <Typography variant="strong" className="flex-1">
                   {name}
                 </Typography>
                 <Typography className=" text-gray-500">{id}</Typography>
               </div>
-              <BiDotsHorizontalRounded size={24} />
+              <BiDotsHorizontalRounded size={24} className="hidden lg:block" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="-m-2 w-80">
