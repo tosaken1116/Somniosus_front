@@ -6,15 +6,18 @@ import { Item } from './items/tweet';
 
 import type { Tweet } from './items/tweet';
 
-import { ScrollArea } from '@/components/ui/ScrollArea';
+import { Separator } from '@/components/ui/Separator';
 
 export const TweetsPresentation: React.FC = () => {
   const { tweets } = useTweets();
   return (
-    <ScrollArea className="h-screen">
+    <div>
       {tweets.map((tweet) => (
-        <Item key={tweet.id} tweet={tweet as Tweet} />
+        <>
+          <Item key={tweet.id} tweet={tweet as Tweet} />
+          <Separator className="h-[3px] bg-white-hover " />
+        </>
       ))}
-    </ScrollArea>
+    </div>
   );
 };

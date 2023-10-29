@@ -55,7 +55,7 @@ export const Item: FC<Props> = ({
     );
   }
   return (
-    <div className="flex w-full flex-row gap-4 text-xl">
+    <div className="flex w-full flex-row gap-4 p-4 text-xl">
       <div className="flex w-full flex-row gap-4 text-xl">
         {!isRetweetContent && (
           <Avatar className="h-12 w-12">
