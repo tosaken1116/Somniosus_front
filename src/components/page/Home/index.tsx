@@ -10,12 +10,12 @@ import { Separator } from '@/components/ui/Separator';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 
 export const Screen: React.FC = () => (
-  <div className="flex">
-    <div className="flex w-1/4 justify-end">
+  <div className="flex h-screen">
+    <div className="flex w-24 items-center lg:w-1/4 lg:justify-end">
       <SideBar />
-      <Separator orientation="vertical" className="w-[2px] bg-white-hover" />
     </div>
-    <div className="relative max-w-3xl flex-1 overflow-scroll">
+    <Separator orientation="vertical" className="w-[2px] bg-white-hover" />
+    <div className="relative h-screen max-w-3xl flex-1">
       <div className=" absolute w-full">
         <Tabs defaultValue="recommend" className="w-full">
           <TabsList className="w-full">
@@ -39,7 +39,7 @@ export const Screen: React.FC = () => (
         />
       </div>
 
-      <ScrollArea className="mt-16 h-screen">
+      <ScrollArea className="mt-[64px] h-[100%-64px]">
         <PostTweet />
         <Separator
           className="h-[2px] bg-white-hover"
@@ -48,9 +48,9 @@ export const Screen: React.FC = () => (
         <Tweets />
       </ScrollArea>
     </div>
-    <div className="flex w-1/4 flex-row">
+    <div className="hidden w-0 flex-row md:flex md:w-1/4">
       <Separator orientation="vertical" className="w-[2px] bg-white-hover" />
-      <div className="w-full px-6 pt-1">
+      <div className="w-full overflow-scroll px-6 pt-1">
         <TrendsContainer />
       </div>
     </div>
