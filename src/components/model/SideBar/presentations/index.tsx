@@ -44,7 +44,7 @@ export const SideBarPresentation: React.FC = () => {
   } = useSideBar();
   return (
     <TooltipProvider>
-      <header className="flex h-screen w-72 flex-col items-start">
+      <header className="flex h-screen w-80 flex-col items-start">
         <ScrollArea className=" w-72 flex-1 px-2">
           <div className="flex h-full w-full flex-col items-start">
             <Button
