@@ -19,11 +19,11 @@ export type RegisterPasswordPayload = {
 }
 
 export type UpdateAccountPayload = {
-  name: string
-  description: string
-  image_url: string
-  birth_day: string
-  website_url: string
+  name?: string | undefined
+  description?: string | undefined
+  image_url?: string | undefined
+  birth_day?: string | undefined
+  website_url?: string | undefined
 }
 
 export type Account = {
@@ -42,9 +42,8 @@ export type Account = {
 export type CreateTweetPayload = {
   content: string
   image_url_list: string[]
-  account_id: string
-  reply_to: string
-  root: string
+  reply_to?: string | null | undefined
+  root?: string | null | undefined
 }
 
 export type CreateTweetResponse = {
